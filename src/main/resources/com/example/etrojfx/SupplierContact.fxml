@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.etrojfx.SupplierContacts"
+            prefHeight="400.0" prefWidth="600.0">
+    <VBox prefHeight="458.0" prefWidth="175.0" style="-fx-background-color: #f3974f;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <Button alignment="BASELINE_LEFT" mnemonicParsing="false" prefHeight="123.0" prefWidth="175.0" style="-fx-background-color: #f3974f;" textFill="WHITE">
+                <padding>
+                    <Insets left="30.0" />
+                </padding>
+            </Button>
+            <Button fx:id="homeBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Home" textFill="WHITE">
+                <padding>
+                    <Insets left="25.0" />
+                </padding>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+            <Button fx:id="warehouseBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Warehouse" textFill="WHITE">
+                <padding>
+                    <Insets left="25.0" />
+                </padding>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+            <Button fx:id="salesOrderBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Sales Order" textFill="WHITE">
+                <padding>
+                    <Insets left="25.0" />
+                </padding>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+            <Button fx:id="supplierBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Suplier Contacts" textFill="WHITE">
+                <padding>
+                    <Insets left="25.0" />
+                </padding>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+            <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Logout" textFill="WHITE">
+                <padding>
+                    <Insets left="25.0" />
+                </padding>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+        </children>
+    </VBox>
+</AnchorPane>
