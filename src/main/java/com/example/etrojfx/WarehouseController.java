@@ -1,5 +1,6 @@
 package com.example.etrojfx;
 
+import com.example.etrojfx.Globals.Global;
 import com.example.etrojfx.HelperFunctions.Helpers;
 import com.example.etrojfx.Models.Product;
 import javafx.collections.FXCollections;
@@ -16,8 +17,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class WarehouseController implements Initializable {
@@ -34,6 +37,12 @@ public class WarehouseController implements Initializable {
     public Button salesOrderBtn;
     public Button supplierBtn;
     public Button logoutBtn;
+
+
+    private ArrayList<Product> productsArray = new ArrayList<>(Arrays.asList(new Product("B24","Local",12.00,12.00,6.0,12000.00),
+                    new Product("B24","Local",12.00,12.00,6.0,12000.00),
+                    new Product("B24","Local",12.00,12.00,6.0,12000.00) ));
+
 
     @FXML
     protected void NavigateToWarehouse(ActionEvent event) throws IOException {
@@ -70,20 +79,44 @@ public class WarehouseController implements Initializable {
         stage.show();
 
     }
+
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void initialize(URL url, ResourceBundle resourceBundle)  {
+        FileOutputStream file = null;
+        try {
+            file = new FileOutputStream(Global.DirectoryPath+"DataFiles\\Warehouse.txt",false);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+            out.writeObject(productsArray);
+            out.flush();
+            out.close();
+            file.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         itemNo.setCellValueFactory(new PropertyValueFactory<>("ItemNo"));
         Manufacturer.setCellValueFactory(new PropertyValueFactory<>("Manufacturer"));
         Size.setCellValueFactory(new PropertyValueFactory<>("Size"));
         Cost.setCellValueFactory(new PropertyValueFactory<>("CostPerItem"));
         Stock.setCellValueFactory(new PropertyValueFactory<>("StockQty"));
         Inventry.setCellValueFactory(new PropertyValueFactory<>("InventryValue"));
+        ArrayList<Product> products = new ArrayList<>();
+        ObservableList<Product> ProductModel = FXCollections.observableArrayList();
+        try {
+            FileInputStream inputfile = new FileInputStream(Global.DirectoryPath+"DataFiles\\Warehouse.txt");
+            ObjectInputStream in = new ObjectInputStream(inputfile);
+            products = (ArrayList<Product>) in.readObject();
+            ProductModel = FXCollections.observableArrayList(products);
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        catch(ClassNotFoundException ex)
+        {
+            System.out.println("ClassNotFoundException is caught");
+        }
+        // Method for deserialization of object
         table.setItems(ProductModel);
     }
 
-
-    private ObservableList<Product> ProductModel = FXCollections.observableArrayList(
-            new Product("B24","Local",12.00,12.00,6,12000.00),
-            new Product("B24","Local",12.00,12.00,6,12000.00),
-            new Product("B24","Local",12.00,12.00,6,12000.00));
 }
