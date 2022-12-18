@@ -6,4 +6,6 @@ module com.example.etrojfx {
 
     opens com.example.etrojfx to javafx.fxml;
     exports com.example.etrojfx;
+    exports  com.example.etrojfx.Models;
+    opens com.example.etrojfx.Models to javafx.fxml;
 }

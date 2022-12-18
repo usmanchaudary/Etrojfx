@@ -1,5 +1,7 @@
 package com.example.etrojfx;
 
+import com.example.etrojfx.HelperFunctions.Helpers;
+import com.example.etrojfx.Models.Product;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -33,7 +35,6 @@ public class WarehouseController implements Initializable {
     public Button supplierBtn;
     public Button logoutBtn;
 
-
     @FXML
     protected void NavigateToWarehouse(ActionEvent event) throws IOException {
         Stage stage = null;
@@ -49,13 +50,18 @@ public class WarehouseController implements Initializable {
             System.out.println("warehouse");
         } else if (event.getSource() == salesOrderBtn) {
             stage=(Stage) salesOrderBtn.getScene().getWindow();
-            myNewScene = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            myNewScene = FXMLLoader.load(getClass().getResource("SalesOrder.fxml"));
             System.out.println("saleorder");
         }
         else if (event.getSource() == supplierBtn) {
             stage=(Stage) supplierBtn.getScene().getWindow();
-            myNewScene = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            myNewScene = FXMLLoader.load(getClass().getResource("SupplierContact.fxml"));
             System.out.println("supplier");
+        }
+        else if (event.getSource() == logoutBtn) {
+            stage = (Stage) logoutBtn.getScene().getWindow();
+            myNewScene = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            System.out.println("Logout");
         }
 
         Scene scene = new Scene(myNewScene);

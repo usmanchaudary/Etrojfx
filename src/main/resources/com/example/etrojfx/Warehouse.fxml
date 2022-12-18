@@ -23,7 +23,7 @@
                         <Insets left="30.0" />
                     </padding>
                 </Button>
-                <Button fx:id="homeBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Home" textFill="WHITE">
+                <Button fx:id="homeBtn" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" onAction="#NavigateToWarehouse" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Home" textFill="WHITE">
                     <padding>
                         <Insets left="25.0" />
                     </padding>
@@ -31,7 +31,7 @@
                         <Font size="13.0" />
                     </font>
                 </Button>
-                <Button fx:id="warehouseBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Warehouse" textFill="WHITE">
+                <Button fx:id="warehouseBtn" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" onAction="#NavigateToWarehouse" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Warehouse" textFill="WHITE">
                     <padding>
                         <Insets left="25.0" />
                     </padding>
@@ -39,7 +39,7 @@
                         <Font size="13.0" />
                     </font>
                 </Button>
-                <Button fx:id="salesOrderBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Sales Order" textFill="WHITE">
+                <Button fx:id="salesOrderBtn" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" onAction="#NavigateToWarehouse" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Sales Order" textFill="WHITE">
                     <padding>
                         <Insets left="25.0" />
                     </padding>
@@ -47,7 +47,7 @@
                         <Font size="13.0" />
                     </font>
                 </Button>
-                <Button fx:id="supplierBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Suplier Contacts" textFill="WHITE">
+                <Button fx:id="supplierBtn" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" onAction="#NavigateToWarehouse" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Suplier Contacts" textFill="WHITE">
                     <padding>
                         <Insets left="25.0" />
                     </padding>
@@ -55,7 +55,7 @@
                         <Font size="13.0" />
                     </font>
                 </Button>
-                <Button fx:id="logoutBtn" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Logout" textFill="WHITE">
+                <Button fx:id="logoutBtn" onAction="#NavigateToWarehouse" alignment="BASELINE_LEFT" graphicTextGap="3.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #f3974f;" text="Logout" textFill="WHITE">
                     <padding>
                         <Insets left="25.0" />
                     </padding>
@@ -74,14 +74,14 @@
                 <RowConstraints maxHeight="272.0" minHeight="10.0" prefHeight="248.66665649414062" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <TableView fx:id="table" prefHeight="272.0" prefWidth="549.0" GridPane.rowIndex="1">
+                <TableView fx:id="table" prefHeight="272.0" prefWidth="599.0" GridPane.rowIndex="1">
                     <columns>
                         <TableColumn fx:id="itemNo" prefWidth="101.33332824707031" text="Item No." />
                         <TableColumn fx:id="Manufacturer" prefWidth="102.66665649414062" text="Manufacturer" />
                         <TableColumn fx:id="Size" prefWidth="98.66668701171875" text="Size" />
                         <TableColumn fx:id="Cost" prefWidth="105.33328247070312" text="Cost Per Item" />
                         <TableColumn fx:id="Stock" prefWidth="108.66668701171875" text="Stock Quantity" />
-                        <TableColumn fx:id="Inventry" minWidth="9.3333740234375" prefWidth="110.66668701171875" text="Inventry Value" />
+                        <TableColumn fx:id="Inventry" minWidth="9.3333740234375" prefWidth="129.0" text="Inventry Value" />
                     </columns>
                 </TableView>
                 <HBox prefHeight="78.0" prefWidth="531.0">
@@ -93,7 +93,7 @@
         </GridPane>
         <Pane layoutX="175.0" prefHeight="77.0" prefWidth="754.0" style="-fx-background-color: #f3a05a;" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
-                <Text fill="WHITE" layoutX="274.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ETRO CLOTHING" textAlignment="CENTER" wrappingWidth="302.5364685058594">
+                <Text fill="WHITE" layoutX="226.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ETRO CLOTHING" textAlignment="CENTER" wrappingWidth="302.5364685058594">
                     <font>
                         <Font size="36.0" />
                     </font>

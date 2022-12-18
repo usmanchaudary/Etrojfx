@@ -21,6 +21,7 @@ public class Login {
     public TextField tfName;
     public PasswordField pass;
     public Button Login;
+    public Button CreateNowBtn;
     private Stage stage;
     @FXML
     protected void loginBtnAction(ActionEvent event) throws IOException {
@@ -39,7 +40,15 @@ public class Login {
     }
 
     @FXML
-    protected void CreateNowBtn() {
+    protected void CreateNowBtn(ActionEvent event) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(Login.class.getResource("Register.fxml"));
+        stage = (Stage) CreateNowBtn.getScene().getWindow();
+
+        Scene scene = new Scene(fxmlLoader.load());
+        //stage.setTitle("ETRO Clothing");
+        stage.setScene(scene);
+        stage.show();
+
        //welcomeText.setText("Welcome to JavaFX Application!");
     }
 }

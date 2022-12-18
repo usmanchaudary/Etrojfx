@@ -1,4 +1,4 @@
-package com.example.etrojfx;
+package com.example.etrojfx.Models;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -9,7 +9,6 @@ import java.util.ResourceBundle;
 public class Product {
     private SimpleStringProperty ItemNo;
     private SimpleStringProperty Manufacturer;
-
     private SimpleDoubleProperty Size;
     private SimpleDoubleProperty CostPerItem;
     private SimpleDoubleProperty StockQty;

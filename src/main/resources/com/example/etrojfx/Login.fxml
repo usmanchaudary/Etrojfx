@@ -48,7 +48,7 @@
             </LinearGradient>
          </fill>
       </Text>
-      <Button fx:id="CreateNowBtn" layoutX="469.0" layoutY="338.0" mnemonicParsing="false" onAction="#CreateNowBtn" prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: offwhite;" text="Create Now !" />
+      <Button fx:id="CreateNowBtn"  onAction="#CreateNowBtn" layoutX="469.0" layoutY="338.0" mnemonicParsing="false"  prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: offwhite;" text="Create Now !" />
       <ImageView fitHeight="324.0" fitWidth="292.0" layoutX="14.0" layoutY="80.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../pic/gurls.jpg" />

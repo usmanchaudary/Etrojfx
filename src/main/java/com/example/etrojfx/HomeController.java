@@ -43,18 +43,25 @@ public class HomeController {
             System.out.println("warehouse");
         } else if (event.getSource() == salesOrderBtn) {
             stage=(Stage) salesOrderBtn.getScene().getWindow();
-            myNewScene = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            myNewScene = FXMLLoader.load(getClass().getResource("SalesOrder.fxml"));
             System.out.println("saleorder");
         }
         else if (event.getSource() == supplierBtn) {
             stage=(Stage) supplierBtn.getScene().getWindow();
-            myNewScene = FXMLLoader.load(getClass().getResource("Home.fxml"));
+            myNewScene = FXMLLoader.load(getClass().getResource("SupplierContact.fxml"));
             System.out.println("supplier");
+
         }
+        else if (event.getSource() == logoutBtn) {
+            stage = (Stage) logoutBtn.getScene().getWindow();
+            myNewScene = FXMLLoader.load(getClass().getResource("Login.fxml"));
+            System.out.println("Logout");
+        }
+
 
         Scene scene = new Scene(myNewScene);
         stage.setScene(scene);
-        stage.setTitle("My New Scene");
+        stage.setTitle("ETRO Clothing");
         stage.show();   
 
     }

@@ -9,12 +9,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.etrojfx.RegisterController">
    <ImageView fitHeight="444.0" fitWidth="257.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@pic/gurls.jpg" />
+      <Image url="@../pic/gurls.jpg" />
    </ImageView>
    <ImageView fitHeight="57.0" fitWidth="93.0" layoutX="22.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
-      <Image url="@pic/a1f49a16f6a76b841e1af73b62c1ceed.png" />
+      <Image url="@../pic/a1f49a16f6a76b841e1af73b62c1ceed.png" />
    </ImageView>
    <Text layoutX="367.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sign Up" wrappingWidth="97.33333333333348">
       <font>
@@ -23,7 +23,7 @@
    </Text>
    <TextField layoutX="319.0" layoutY="118.0" prefHeight="25.0" prefWidth="231.0" promptText="Full Name" />
    <TextField layoutX="319.0" layoutY="162.0" prefHeight="25.0" prefWidth="231.0" promptText="Email" />
-   <Button fx:id="SignupBtnAction" layoutX="454.0" layoutY="342.0" mnemonicParsing="false" onAction="#SignupBtnAction" text="Sign Up" />
+   <Button fx:id="SignupBtnAction"  layoutX="454.0" layoutY="342.0" mnemonicParsing="false"  text="Sign Up" />
    <Text layoutX="319.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="By signing up,you agree to the Terms of Service &amp; Privacy Policy !" wrappingWidth="231.33333333333348">
       <font>
          <Font name="Bell MT" size="14.0" />

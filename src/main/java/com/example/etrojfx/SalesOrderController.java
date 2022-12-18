@@ -1,6 +1,6 @@
 package com.example.etrojfx;
 
-import com.example.etrojfx.Models.Suppliers;
+import com.example.etrojfx.Models.SalesOrder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -19,17 +19,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SupplierContacts implements Initializable {
-    public TableView<Suppliers> table;
-    public TableColumn ItemNo;
-    public TableColumn Name;
-    public TableColumn Contact;
-    public TableColumn Address;
+public class SalesOrderController implements Initializable {
     public Button homeBtn;
     public Button warehouseBtn;
     public Button salesOrderBtn;
     public Button supplierBtn;
     public Button logoutBtn;
+    public TableView salesOrderTable;
+    public TableColumn itemNo;
+    public TableColumn Size;
+    public TableColumn Quantity;
+    public TableColumn Price;
+    public TableColumn Address;
 
 
     @FXML
@@ -67,18 +68,18 @@ public class SupplierContacts implements Initializable {
         stage.show();
 
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ItemNo.setCellValueFactory(new PropertyValueFactory<>("ItemNo"));
-        Name.setCellValueFactory(new PropertyValueFactory<>("Name"));
-        Contact.setCellValueFactory(new PropertyValueFactory<>("Contact"));
+        itemNo.setCellValueFactory(new PropertyValueFactory<>("ItemNo"));
+        Size.setCellValueFactory(new PropertyValueFactory<>("Size"));
+        Quantity.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
+        Price.setCellValueFactory(new PropertyValueFactory<>("Price"));
         Address.setCellValueFactory(new PropertyValueFactory<>("Address"));
-        table.setItems(SupplierContactsModel);
+        salesOrderTable.setItems(SalesOrderModel);
     }
-
-
-    private ObservableList<Suppliers> SupplierContactsModel = FXCollections.observableArrayList(
-            new Suppliers("CR7","Cristiano","67567467","Portugal"),
-            new Suppliers("dfawsedf","Messi","6767454","Argentina"));
+    private ObservableList<com.example.etrojfx.Models.SalesOrder> SalesOrderModel = FXCollections.observableArrayList(
+            new SalesOrder("3434",12.0,12.3,1200,"lahore"),
+            new SalesOrder("3434",12.0,12.3,1200,"lahore"),
+            new SalesOrder("3434",12.0,12.3,1200,"lahore"));
 }
-
