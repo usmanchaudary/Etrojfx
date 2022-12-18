@@ -1,6 +1,8 @@
 package com.example.etrojfx.Models;
 
-public class SalesOrder {
+import java.io.Serializable;
+
+public class SalesOrder implements Serializable {
     public String itemNo;
     public double Size;
     public double Quantity;
@@ -47,9 +49,7 @@ public class SalesOrder {
         Price = price;
     }
 
-    public String getAddress() {
-        return Address;
-    }
+    public String getAddress() {return Address;}
 
     public void setAddress(String address) {
         Address = address;

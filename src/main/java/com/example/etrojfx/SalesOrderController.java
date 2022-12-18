@@ -1,5 +1,7 @@
 package com.example.etrojfx;
 
+import com.example.etrojfx.Globals.Global;
+import com.example.etrojfx.Models.Product;
 import com.example.etrojfx.Models.SalesOrder;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,8 +17,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class SalesOrderController implements Initializable {
@@ -32,7 +36,9 @@ public class SalesOrderController implements Initializable {
     public TableColumn Price;
     public TableColumn Address;
 
-
+    private ArrayList<SalesOrder> SalesOrderArray = new ArrayList<>(Arrays.asList(new SalesOrder("3434",12.0,12.3,1200,"lahore"),
+            new SalesOrder("3434",12.0,12.3,1200,"lahore"),
+            new SalesOrder("3434",12.0,12.3,1200,"lahore")));
     @FXML
     protected void NavigateToWarehouse(ActionEvent event) throws IOException {
         Stage stage = null;
@@ -71,15 +77,40 @@ public class SalesOrderController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        FileOutputStream file = null;
+        try {
+            file = new FileOutputStream(Global.DirectoryPath+"DataFiles\\SalesOrder.txt",false);
+            ObjectOutputStream out = new ObjectOutputStream(file);
+            out.writeObject(SalesOrderArray);
+            out.flush();
+            out.close();
+            file.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
         itemNo.setCellValueFactory(new PropertyValueFactory<>("ItemNo"));
         Size.setCellValueFactory(new PropertyValueFactory<>("Size"));
         Quantity.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
         Price.setCellValueFactory(new PropertyValueFactory<>("Price"));
         Address.setCellValueFactory(new PropertyValueFactory<>("Address"));
+        ArrayList<SalesOrder> orders = new ArrayList<>();
+        ObservableList<SalesOrder> SalesOrderModel = FXCollections.observableArrayList();
+        try {
+            FileInputStream inputfile = new FileInputStream(Global.DirectoryPath+"DataFiles\\SalesOrder.txt");
+            ObjectInputStream in = new ObjectInputStream(inputfile);
+            orders = (ArrayList<SalesOrder>) in.readObject();
+            SalesOrderModel = FXCollections.observableArrayList(orders);
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        catch(ClassNotFoundException ex)
+        {
+            System.out.println("ClassNotFoundException is caught");
+        }
         salesOrderTable.setItems(SalesOrderModel);
     }
-    private ObservableList<com.example.etrojfx.Models.SalesOrder> SalesOrderModel = FXCollections.observableArrayList(
-            new SalesOrder("3434",12.0,12.3,1200,"lahore"),
-            new SalesOrder("3434",12.0,12.3,1200,"lahore"),
-            new SalesOrder("3434",12.0,12.3,1200,"lahore"));
+
 }
